@@ -17,8 +17,7 @@ public class Publisher
     private String state;
     private String zip;
 
-    @OneToMany
-    @JoinColumn(name = "publisher_id")
+    @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<>();
 
     public Publisher()

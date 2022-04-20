@@ -27,7 +27,6 @@ public class BootStrapData implements CommandLineRunner
     public void run(String... args) throws Exception
     {
         Publisher oReilly = new Publisher("OReilly", "Address Line 1", "Chicago", "Illinois", "ZIP Code");
-        publisherRepository.save(oReilly);
 
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("Domain Driven Design", "123123");
@@ -37,7 +36,7 @@ public class BootStrapData implements CommandLineRunner
         oReilly.getBooks().add(ddd);
 
         authorRepository.save(eric);
-        bookRepository.save(ddd);
+        // Save the publisher and the book is also saved due to the cascade type
         publisherRepository.save(oReilly);
 
         Author rod = new Author("Rod", "Johnson");
@@ -48,7 +47,7 @@ public class BootStrapData implements CommandLineRunner
         oReilly.getBooks().add(noEJB);
 
         authorRepository.save(rod);
-        bookRepository.save(noEJB);
+        // Save the publisher and the book is also saved due to the cascade type
         publisherRepository.save(oReilly);
 
         System.out.println("Started in Bootstrap");
