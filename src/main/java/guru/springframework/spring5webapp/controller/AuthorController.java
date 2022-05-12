@@ -1,6 +1,6 @@
-package guru.springframework.spring5webapp.controllers;
+package guru.springframework.spring5webapp.controller;
 
-import guru.springframework.spring5webapp.repositories.AuthorRepository;
+import guru.springframework.spring5webapp.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
